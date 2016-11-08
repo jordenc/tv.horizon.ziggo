@@ -255,7 +255,7 @@ function sendCommand (cmd, hostIP, callback, substring) {
 		
 		var buffer = data.toJSON(data);
 		
-		//Homey.log ('buffer = ' + JSON.stringify(buffer.data));
+		Homey.log ('buffer = ' + JSON.stringify(buffer.data));
 
 		//readVersionMsg
 		if (datastring.substring(0,3) == 'RFB') {
