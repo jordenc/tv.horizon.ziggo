@@ -269,17 +269,16 @@ function sendCommand (cmd, hostIP, callback, substring) {
 			Homey.log('received OK message, returning it.');
 			// Send Authorisation type (none)
 			client.write (Hex2Bin('01'));
-			
+		
+		//OK to authorisation type
 		} else if (datastring == "\u0000\u0000\u0000\u0000") {
 			
-			Homey.log('Received init data');
-		/*	
-		//OK to authorisation type
+			Homey.log('received AUTH OK message');
+		
 		} else if (datastring == "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000") {
-		*/	
 			//client.write
-			Homey.log('received AUTH OK message, sending cmd now.');
 			
+			Homey.log('Received init data');	
 			Homey.log ('sending: ' + "040100000000" + cmd);
 			Homey.log ('sending: ' + Hex2Bin("040100000000" + cmd));
 			client.write(Hex2Bin("040100000000" + cmd)); // Turn key on
