@@ -1,0 +1,123 @@
+{
+    "id": "tv.horizon.ziggo",
+    "name": {
+        "en": "Horizon TV Settopbox"
+    },
+    "version": "0.0.1",
+    "compatibility": "*",
+    "author": {
+        "name": "Chamid Media",
+        "email": "info@chamidmedia.nl"
+    },
+    "images": {
+      "large": "./assets/images/large.jpg",
+      "small": "./assets/images/small.jpg"
+    },
+    "category": "appliances",
+    "description": {
+    	"en": "Control your Ziggo Horizon settopbox for your TV with Homey",
+		"nl": "Bestuur je Ziggo Horizon TV settopbox mey Homey"
+    },
+    "dependencies": {
+    		"net": "*"
+    },
+    "drivers": [
+      {
+          "id": "settopbox",
+          "name": {
+              "en": "Horizon Settopbox",
+              "nl": "Horizon Settopbox"
+          },
+          "images": {
+              "large": "drivers/settopbox/assets/images/large.jpg",
+              "small": "drivers/settopbox/assets/images/small.jpg"
+          },
+          "class": "",
+          "capabilities": [],
+          "pair": [
+            {
+              "id": "start"
+            },
+            {
+              "id": "list_devices",
+              "template": "list_devices",
+			  "navigation": {
+                    "next": "add_my_devices"
+                }
+            },
+            {
+                "id": "add_my_devices",
+                "template": "add_devices"
+            }
+          ],
+          "settings": [
+                {
+                    "type": "group",
+                    "label": {
+                        "en": "General settings",
+                        "nl": "Algemene instellingen"
+                    },
+                    "children": [
+	                    {
+	                        "id": "ipaddress",
+	                        "type": "text",
+	                        "label": {
+	                            "en": "IP address",
+	                            "nl": "IP adres"
+	                        },
+	                        "value": "0.0.0.0"
+	                    }
+	                ]
+	            }
+	        ]
+      }
+    ],
+    "flow": {
+	    "actions": [
+        {
+            "id": "powerOn",
+            "title": {
+                "en": "Toggle power",
+                "nl": "Box aan/uit"
+            },
+            "args": [
+              {
+                "name": "device",
+                "type": "device",
+                "placeholder": {
+                  "en": "Select box",
+                  "nl": "Selecteer box"
+                },
+	            "filter": "driver_id=settopbox"
+              }
+            ]
+        },
+        {
+            "id": "sendKey",
+            "title": {
+                "en": "Send key",
+                "nl": "Verstuur knop"
+            },
+            "args": [
+              {
+                "name": "device",
+                "type": "device",
+                "placeholder": {
+                  "en": "Select box",
+                  "nl": "Selecteer box"
+                },
+	            "filter": "driver_id=settopbox"
+              },
+			  {
+			  	"name": "input",
+                "type": "autocomplete",
+                "placeholder": {
+                  "en": "input",
+                  "nl": "input"
+               	}
+              }
+            ]
+        }
+       ]
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"pair": {
+		"start": {
+			"intro": "Vul het IP-adres van uw Horizon box in.",
+			"title": "Apparaat zoeken...",
+			"error": "Er is een fout opgetreden.",
+			"required": "IP adres is verplicht.",
+			"ipAddress": "IP adres",
+			"saveSettings": "Gegevens opslaan"
+		}
+	}	
+}
