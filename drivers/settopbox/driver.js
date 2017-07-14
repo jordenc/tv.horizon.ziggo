@@ -238,12 +238,18 @@ function sendCommand (cmd, hostIP, callback, substring) {
 	client.connect(5900, hostIP);
 	
 	client.on('error', function(err){
+	
 	    Homey.log("Error: "+err.message);
-	    //callback (err.message, false);
+	    callback (err.message, false);
+	
 	});
 	
 	client.on('close', function() {
+		
 		Homey.log('Connection closed');
+		
+		callback (null, false);
+		
 	});
 
 	client.on('data', function(data) {
@@ -313,18 +319,6 @@ function searchForInputsByValue ( value ) {
 
 function Hex2Bin (s) {
 
-  var ret = []
-  var i = 0
-  var l
+	return new Buffer(s, "hex");
 
-  s += ''
-
-  for (l = s.length; i < l; i += 2) {
-    var c = parseInt(s.substr(i, 1), 16)
-    var k = parseInt(s.substr(i + 1, 1), 16)
-    if (isNaN(c) || isNaN(k)) return false
-    ret.push((c << 4) | k)
-  }
-
-  return String.fromCharCode.apply(String, ret)
 }
