@@ -254,8 +254,6 @@ function sendCommand (cmd, hostIP, callback, substring) {
 
 	client.on('data', function(data) {
 		
-		//Homey.log('data=' + JSON.stringify(data));
-		
 		var datastring = data.toString();
 		
 		
