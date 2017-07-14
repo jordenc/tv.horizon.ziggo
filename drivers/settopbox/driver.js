@@ -207,11 +207,11 @@ Homey.on('unload', function(){
 
 // flow action handlers
 Homey.manager('flow').on('action.powerOn', function (callback, args) {
-	sendCommand ('!1PWR01', devices[args.device.id].settings.ipaddress, function (result) {
+	sendCommand ('E000', devices[args.device.id].settings.ipaddress, function (result) {
 	
-		if (result == '1PWR01') callback (null, true); else callback (null, false);
+		if (result == 'E000') callback (null, true); else callback (null, false);
 		
-	}, '1PWR');
+	}, 'E000');
 });
 
 Homey.manager('flow').on('action.sendKey', function (callback, args) {

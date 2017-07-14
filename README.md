@@ -14,6 +14,9 @@ Use at your own risk, I accept no responsibility for any damages caused by using
 
 # Changelog
 
+**Version 0.1.2:**
+- Fixed Power toggle action card
+
 **Version 0.1.1:**
 - Fixed: Now correctly closes connection
 
