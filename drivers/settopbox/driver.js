@@ -248,6 +248,8 @@ function sendCommand (cmd, hostIP, callback, substring) {
 		
 		Homey.log('Connection closed');
 		
+		client.destroy();
+		
 		callback (null, false);
 		
 	});

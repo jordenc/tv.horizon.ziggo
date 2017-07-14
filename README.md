@@ -4,7 +4,7 @@ Control your (Ziggo) Horizon settopbox using the Homey by Athom B.V.
 
 **Want to show your appreciation for this app? A donation is possible via http://www.d2c.nl **
 
-You first need to have the IP-address of your Horizon box. You can only control it if it is in the same network as Homey.
+You first need to have the IP-address of your Horizon box. Make sure this is a fixed IP address, or otherwise the device cannot be controlled. You can only control it if it is in the same network as Homey.
 
 Enables the following actions to use in your flows:
 - Toggle power
@@ -14,5 +14,8 @@ Use at your own risk, I accept no responsibility for any damages caused by using
 
 # Changelog
 
-**Version 0.0.1:**
+**Version 0.1.1:**
+- Fixed: Now correctly closes connection
+
+**Version 0.1.0:**
 - First release
