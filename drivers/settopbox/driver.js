@@ -25,7 +25,7 @@ module.exports.init = function(devices_data, callback) {
 	    
 	    Homey.log('add device: ' + JSON.stringify(device));
 	    
-	    devices[device.id] = device;    
+	    devices[device.id] = Object.assign({}, device);   
 	    
 	    module.exports.getSettings(device, function(err, settings){
 		    devices[device.id].settings = settings;
@@ -54,111 +54,111 @@ KEY_UNKNOWN_2	= Ef 16;	// N
 */
 
 var allPossibleInputs = [
-		{	inputName: 'E000',
-	 		friendlyName: "Power toggle"
-		},
-		{	inputName: 'E001',
-	 		friendlyName: "OK"
-		},
-		{	inputName: 'E002',
-	 		friendlyName: "Back"
-		},
-		{	inputName: 'E006',
-			friendlyName: "Channel up"
-		},
-		{	inputName: 'E007',
-	 		friendlyName: "Channel down"
-		},
-		{	inputName: 'E009',
-	 		friendlyName: "Help"
-		},
-		{	inputName: 'E00a',
-			friendlyName: "Menu"
-		},
-		{	inputName: 'E00b',
-			friendlyName: "TV Guide"
-		},
-		{	inputName: 'E00e',
-	 		friendlyName: "Info"
-		},
-		{	inputName: 'E00f',
-			friendlyName: "Text"
-		},
-		{	inputName: 'E011',
-	 		friendlyName: "Menu1"
-		},
-		{	inputName: 'E015',
-	 		friendlyName: "Menu2"
-		},
-		{	inputName: 'Ef00',
-	 		friendlyName: "Menu3"
-		},
-		{	inputName: 'E100',
-	 		friendlyName: "Up"
-		},
-		{	inputName: 'E101',
-	 		friendlyName: "Down"
-		},
-		{	inputName: 'E102',
-	 		friendlyName: "Left"
-		},
-		{	inputName: 'E103',
-	 		friendlyName: "Right"
-		},
-		{	inputName: 'E300',
-	 		friendlyName: "Number 0"
-		},
-		{	inputName: 'E301',
-	 		friendlyName: "Number 1"
-		},
-		{	inputName: 'E302',
-	 		friendlyName: "Number 2"
-		},
-		{	inputName: 'E303',
-	 		friendlyName: "Number 3"
-		},
-		{	inputName: 'E304',
-	 		friendlyName: "Number 4"
-		},
-		{	inputName: 'E305',
-	 		friendlyName: "Number 5"
-		},
-		{	inputName: 'E306',
-	 		friendlyName: "Number 6"
-		},
-		{	inputName: 'E307',
-	 		friendlyName: "Number 7"
-		},
-		{	inputName: 'E308',
-	 		friendlyName: "Number 8"
-		},
-		{	inputName: 'E309',
-	 		friendlyName: "Number 9"
-		},
-		{	inputName: 'E400',
-	 		friendlyName: "Pause"
-		},
-		{	inputName: 'E402',
-	 		friendlyName: "Stop"
-		},
-		{	inputName: 'E403',
-	 		friendlyName: "Record"
-		},
-		{	inputName: 'E405',
-	 		friendlyName: "Forward"
-		},
-		{	inputName: 'E407',
-	 		friendlyName: "Rewind"
-		},
-		{	inputName: 'Ef28',
-	 		friendlyName: "ONDEMAND"
-		},
-		{	inputName: 'Ef29',
-	 		friendlyName: "DVR"
-		},
-		{	inputName: 'Ef2a',
-	 		friendlyName: "TV"
-		}
+	{	inputName: 'E000',
+ 		friendlyName: "Power toggle"
+	},
+	{	inputName: 'E001',
+ 		friendlyName: "OK"
+	},
+	{	inputName: 'E002',
+ 		friendlyName: "Back"
+	},
+	{	inputName: 'E006',
+		friendlyName: "Channel up"
+	},
+	{	inputName: 'E007',
+ 		friendlyName: "Channel down"
+	},
+	{	inputName: 'E009',
+ 		friendlyName: "Help"
+	},
+	{	inputName: 'E00a',
+		friendlyName: "Menu"
+	},
+	{	inputName: 'E00b',
+		friendlyName: "TV Guide"
+	},
+	{	inputName: 'E00e',
+ 		friendlyName: "Info"
+	},
+	{	inputName: 'E00f',
+		friendlyName: "Text"
+	},
+	{	inputName: 'E011',
+ 		friendlyName: "Menu1"
+	},
+	{	inputName: 'E015',
+ 		friendlyName: "Menu2"
+	},
+	{	inputName: 'Ef00',
+ 		friendlyName: "Menu3"
+	},
+	{	inputName: 'E100',
+ 		friendlyName: "Up"
+	},
+	{	inputName: 'E101',
+ 		friendlyName: "Down"
+	},
+	{	inputName: 'E102',
+ 		friendlyName: "Left"
+	},
+	{	inputName: 'E103',
+ 		friendlyName: "Right"
+	},
+	{	inputName: 'E300',
+ 		friendlyName: "Number 0"
+	},
+	{	inputName: 'E301',
+ 		friendlyName: "Number 1"
+	},
+	{	inputName: 'E302',
+ 		friendlyName: "Number 2"
+	},
+	{	inputName: 'E303',
+ 		friendlyName: "Number 3"
+	},
+	{	inputName: 'E304',
+ 		friendlyName: "Number 4"
+	},
+	{	inputName: 'E305',
+ 		friendlyName: "Number 5"
+	},
+	{	inputName: 'E306',
+ 		friendlyName: "Number 6"
+	},
+	{	inputName: 'E307',
+ 		friendlyName: "Number 7"
+	},
+	{	inputName: 'E308',
+ 		friendlyName: "Number 8"
+	},
+	{	inputName: 'E309',
+ 		friendlyName: "Number 9"
+	},
+	{	inputName: 'E400',
+ 		friendlyName: "Pause"
+	},
+	{	inputName: 'E402',
+ 		friendlyName: "Stop"
+	},
+	{	inputName: 'E403',
+ 		friendlyName: "Record"
+	},
+	{	inputName: 'E405',
+ 		friendlyName: "Forward"
+	},
+	{	inputName: 'E407',
+ 		friendlyName: "Rewind"
+	},
+	{	inputName: 'Ef28',
+ 		friendlyName: "ONDEMAND"
+	},
+	{	inputName: 'Ef29',
+ 		friendlyName: "DVR"
+	},
+	{	inputName: 'Ef2a',
+ 		friendlyName: "TV"
+	}
 ];
 
 module.exports.pair = function (socket) {
@@ -170,7 +170,21 @@ module.exports.pair = function (socket) {
 
 		Homey.log("Horizon app - list_devices tempIP is " + tempIP);
 		
-		var devices = [{
+		var add_devices = [];
+		
+		add_devices.push(
+			{
+				name	: 'Horizon ' + tempIP,
+				data: {
+					id	:	tempIP
+				},
+				settings: {
+					"ipaddress"		:	tempIP
+				}
+			}
+		);
+						
+		devices[tempIP] = {
 			name				: tempIP,
 			data: {
 				id				: tempIP,
@@ -178,9 +192,9 @@ module.exports.pair = function (socket) {
 			settings: {
 				"ipaddress" 	: tempIP
 			}
-		}];
+		};
 
-		callback (null, devices);
+		callback (null, add_devices);
 
 	});
 
@@ -215,12 +229,85 @@ Homey.manager('flow').on('action.powerOn', function (callback, args) {
 });
 
 Homey.manager('flow').on('action.sendKey', function (callback, args) {
+	
+	Homey.log('devices = ' + JSON.stringify(devices));
 	sendCommand (args.input.inputName, devices[args.device.id].settings.ipaddress, function (result) {
 	
 		if (result == args.input.inputName.substring (1)) callback (null, true); else callback (null, false);	
 		
 	}, args.input.inputName.substring(1,5));
 });
+
+Homey.manager('flow').on('action.setChannel', function (callback, args) {
+	
+	var channel = args.channel.toString();
+	
+	/*
+	for (var i = 0, len = channel.length; i < len; i++) {
+		Homey.log('send key: ' + channel[i]);
+		
+		sendCommand ('E30' + channel[i], devices[args.device.id].settings.ipaddress, function (result) {
+			
+		});
+	}
+	*/
+	
+	if (channel.length == 3) {
+		
+		Homey.log('send key: ' + channel[0]);
+		
+		sendCommand ('E30' + channel[0], devices[args.device.id].settings.ipaddress, function (result) {
+			
+			Homey.log('send key: ' + channel[1]);
+		
+			sendCommand ('E30' + channel[1], devices[args.device.id].settings.ipaddress, function (result) {
+				
+				Homey.log('send key: ' + channel[2]);
+		
+				sendCommand ('E30' + channel[2], devices[args.device.id].settings.ipaddress, function (result) {
+					
+					callback (null, true);
+										
+				});
+				
+			});
+			
+		});
+		
+	}
+	
+	if (channel.length == 2) {
+		
+		Homey.log('send key: ' + channel[0]);
+		
+		sendCommand ('E30' + channel[0], devices[args.device.id].settings.ipaddress, function (result) {
+			
+			Homey.log('send key: ' + channel[1]);
+		
+			sendCommand ('E30' + channel[1], devices[args.device.id].settings.ipaddress, function (result) {
+				
+				callback (null, true);
+				
+			});
+			
+		});
+		
+	}
+	
+	if (channel.length == 1) {
+		
+		Homey.log('send key: ' + channel[0]);
+		
+		sendCommand ('E30' + channel[0], devices[args.device.id].settings.ipaddress, function (result) {
+			
+			callback (null, true);
+			
+		});
+		
+	}
+	
+});
+
 
 Homey.manager('flow').on('action.sendKey.input.autocomplete', function (callback, value) {
 	var inputSearchString = value.query;

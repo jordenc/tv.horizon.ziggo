@@ -3,7 +3,7 @@
     "name": {
         "en": "Horizon TV Settopbox"
     },
-    "version": "0.1.2",
+    "version": "0.1.3",
     "compatibility": "*",
     "author": {
         "name": "Chamid Media",
@@ -114,6 +114,32 @@
                 "placeholder": {
                   "en": "input",
                   "nl": "input"
+               	}
+              }
+            ]
+        },
+        {
+            "id": "setChannel",
+            "title": {
+                "en": "Switch to channel",
+                "nl": "Ga naar kanaal"
+            },
+            "args": [
+              {
+                "name": "device",
+                "type": "device",
+                "placeholder": {
+                  "en": "Select box",
+                  "nl": "Selecteer box"
+                },
+	            "filter": "driver_id=settopbox"
+              },
+			  {
+			  	"name": "channel",
+                "type": "number",
+                "placeholder": {
+                  "en": "Channel",
+                  "nl": "Kanaal"
                	}
               }
             ]
