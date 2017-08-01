@@ -13,6 +13,8 @@ Enables the following actions to use in your flows:
 Use at your own risk, I accept no responsibility for any damages caused by using this script.
 
 # Changelog
+**Version 0.1.4**
+- Added a max number of 999 to channels
 
 **Version 0.1.3:**
 - Fixed a bug that caused the app to crash after first pair

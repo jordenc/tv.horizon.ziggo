@@ -3,7 +3,7 @@
     "name": {
         "en": "Horizon TV Settopbox"
     },
-    "version": "0.1.3",
+    "version": "0.1.4",
     "compatibility": "*",
     "author": {
         "name": "Chamid Media",
@@ -140,7 +140,10 @@
                 "placeholder": {
                   "en": "Channel",
                   "nl": "Kanaal"
-               	}
+               	},
+		min: 0,
+		max: 999,
+		step: 1
               }
             ]
         }
