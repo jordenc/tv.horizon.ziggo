@@ -12,6 +12,8 @@ Enables the following actions to use in your flows:
 
 Use at your own risk, I accept no responsibility for any damages caused by using this script.
 
+TIP: If your Horizon IP does not work, add one number to it. For example, if your Horizon shows that it is available at 192.168.1.7 and that doesn't work, try 192.168.1.8
+
 # Changelog
 **Version 0.1.4**
 - Added a max number of 999 to channels
