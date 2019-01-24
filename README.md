@@ -1,6 +1,6 @@
-# Horizon settopbox app for Athom Homey
+# Ziggo Horizon settopbox app for Athom Homey
 
-Control your (Ziggo) Horizon settopbox using the Homey by Athom B.V.
+Control your Ziggo Horizon settopbox using the Homey by Athom B.V.
 
 **Want to show your appreciation for this app? A donation is possible via http://www.d2c.nl **
 
@@ -15,6 +15,9 @@ Use at your own risk, I accept no responsibility for any damages caused by using
 TIP: If your Horizon IP does not work, add one number to it. For example, if your Horizon shows that it is available at 192.168.1.7 and that doesn't work, try 192.168.1.8
 
 # Changelog
+** Version 0.2.0**
+- Support for Homey 2.0
+
 **Version 0.1.4**
 - Added a max number of 999 to channels
 
